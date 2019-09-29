@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title> {% block tittle %} Scholl Attentdence System {% endblock %} </title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/animate.css' %}">
+    <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
+    <link rel="stylesheet" href="{% static 'css/flexslider.css' %}">
+    <link rel="stylesheet" href="{% static 'css/icomoon.css' %}">
+    <link href="https://unpkg.com/gijgo@1.9.13/css/gijgo.min.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    
+    {% block stylesheets %}
+    
+    {% endblock %} 
+    </head>
+<body>
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+          <div class="navbar-header">
+             
+          </div>
+          <ul class="nav navbar-nav">
+                <li><a href="{% url 'index' %}">Home</a></li>
+                {% if user.is_authenticated %}
+                <li><a href="{% url 'logout' %}">Logout</a></li>
+               
+                {% else %}
+                <li><a href="{% url 'login' %}">Login</a></li>
+                
+                {% endif %}
+                 
+                <li><a href="{% url 'dashboard' %}">Dashboard</a></li>
+               
+             
+             
+          </ul>
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+            <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+          </ul>
+        </div>
+      </nav>
+			<div class="container">
+						{% block content %}
+							  {%endblock%}
+			
+            </div>
+            
+
+            
+          {% block footer %}
+             
+          {% endblock %}
+          <div class="footer">
+            <p>Footer</p>
+            <p> 2019.Student Management System. All Rights Reserverd. Designed and development by Al-Amin </p>
+          </div>
+           
+  <script src="{% static 'js/jquery.js' %}"></script>
+  {% block scripts %}
+   {% endblock %}
+ 
+   
+     
+</body>
+</html>

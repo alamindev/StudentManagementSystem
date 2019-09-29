@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+ 
+{% block content %}
+   <h1> search for : {{ query }} </h1>
+   <div class="row">
+    <div class="col-md-6">
+      
+      <table  class="table">
+        <thead>
+          <th>Name</th>
+          <th>Roll </th>
+          <th>Father Name</th>
+          <th>Mother Name</th>
+
+        </thead>
+        {% for p in Roll %}
+        <div class="col-xs-6 col-md-3">
+            <a href="#" class="thumbnail">
+            <img src="{{ p.Image.url }}" alt="..." style="height:100px;">
+            </a>
+            </div>
+          <tr>
+             
+            <td>{{p.Name }}</td>
+            <td>{{ p.Roll }}</td>
+            <td>{{ p.Father_name }}</td>
+            <td>{{ p.Mother_name }}</td>
+           
+          </tr>
+            {% endfor %}
+      </table>
+    </div>
+
+    </div>
+{% endblock %}

@@ -1,0 +1,69 @@
+body{
+    min-width: 1300px;
+    min-height: 1500px;
+}
+form.form-inline.md-form.mr-auto.mb-4 {
+    padding-bottom: 50px;
+}
+.footer{
+     
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height:50px;
+    background-color: rgba(252, 145, 46, 0.979);
+    color: white;
+    text-align: center;
+    padding-bottom: 100px;
+     
+
+ }
+  
+ .container-fluid {
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+    
+}
+
+ @media only screen and (min-width:750px) and (max-width:1024px){
+    .container-fluid {
+        padding-right: 15px;
+        padding-left: 15px;
+        margin-right: auto;
+        margin-left: auto;
+         
+    }
+
+     .footer{
+         background-color:rgb(51, 51, 44);
+         font-size: 30px;
+     }
+     body{
+        min-width: 800px;
+        min-height: 800px;
+    }
+ }
+
+@media only screen and (min-width:350px) and (max-width:750px){
+    .container-fluid {
+        padding-right: 15px;
+        padding-left: 15px;
+        margin-right: auto;
+        margin-left: auto;
+        
+         
+    }
+    .footer{
+        background-color:green;
+        font-size: 30px;
+    }
+    body{
+        min-width: 400px;
+        min-height: 400px;
+    }
+}
+
+ 
+ 

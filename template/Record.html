@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% block stylesheets %}
+ 
+ 
+  <link rel="stylesheet" href="{% static 'css/Record.css' %}">
+  <link rel="stylesheet" href="http://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css">
+{% endblock %}
+{% block content %}
+
+ <h1> Student Record  </h1>
+   
+      <table id="customers" style="width:100%">
+          <thead>
+             
+              <th>First name</th>
+              <th>Last name</th>
+              <th>Father Name</th>
+              <th>Mother Name</th>
+              <th>Email</th>
+              <th>Roll</th>
+              <th>Registration</th>
+              <th>gender</th>
+              <th>Action</th>
+          </thead>
+          <tbody>
+             
+              {% for i in Record %}
+                <tr>
+                     
+                    <td>{{ i.FirstName }}</td>
+                    <td>{{ i.LastName }}</td>
+                    <td>{{ i.Father_name }}</td>
+                    <td>{{ i.Mother_name }}</td>
+                    <td>{{ i.Email }}</td>
+                    <td>{{ i.Roll }}</td>
+                    <td>{{ i.Registration }}</td>
+                    <td>{{ i.gender }}</td>
+                    <td> <a href="{% url 'Student_Update' pid=i.id %}">Edit</a>||<a href="{% url 'Student_delete' pid=i.id %}">Delete</a> </td>
+                </tr>
+                {% endfor %}
+       </table>
+        
+       
+{% endblock %}
+{% block scripts %}
+   <script src="{% static 'js/Record.js' %}"></script>
+   <script src="http://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+    
+{% endblock %}

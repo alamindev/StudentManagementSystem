@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% load crispy_forms_tags %}
+
+{% block stylesheets %}
+<link rel="stylesheet" href="{% static 'css/gijgo.min.css' %}">
+{% endblock %}
+
+{% block content %}
+<form method="POST">
+     {% csrf_token %}         
+    <div class="row">
+            <div class="col-md-4 col-md-offset-4">
+            <div class="panel panel-default">
+             <div class="panel-heading">Student Attentdence</div>
+              <div class="panel-body">
+            {{ form.category|as_crispy_field }}
+            {{ form.Date | as_crispy_field }}
+            {{ form.In_Time |as_crispy_field }}
+            {{ form.Out_Time | as_crispy_field }}
+            {{ form.check_box | as_crispy_field }}
+             
+            <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+            <div class="g-recaptcha" data-sitekey="6LfbnroUAAAAAOrKKcS9JzQHwTdodi-07EckTMCa"></div>
+            <button type="submit" class="btn btn-success">Submit</button>
+        </div>
+      </div>
+     </div>
+     </div>
+</form>
+  
+{% endblock %}
+{% block scripts %}
+<script src="{% static 'js/gijgo.min.js' %}"></script>
+<script src="{% static 'js/Present.js' %}"></script>
+{% endblock %}

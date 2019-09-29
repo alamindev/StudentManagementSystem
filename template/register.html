@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% load crispy_forms_tags %}
+{% block stylesheets %}
+  <link rel="stylesheet" href="{% static 'css/gijgo.min.css' %}">
+{% endblock %}
+{% block content %}
+ 
+<form method="POST" novalidate>
+    {% csrf_token %}
+     <div class="row">
+          <div class="col-md-6">
+              {{ form.FirstName|as_crispy_field }}
+              {{ form.Father_name | as_crispy_field }}
+              <div class="col-md-6">
+                {{ form.Roll |as_crispy_field }}
+              </div>
+              <div class="col-md-6">
+                  {{ form.gender |as_crispy_field }}
+                </div>
+          </div>
+        <div class="col-md-6">
+            {{ form.LastName|as_crispy_field }}
+            {{ form.Mother_name | as_crispy_field }}
+            <div class="col-md-6">
+                {{ form.Registration|as_crispy_field }}
+              </div>
+              <div class="col-md-6">
+                  {{ form.date_of_birth|as_crispy_field }}
+                </div>
+        </div>
+        <div class="col-md-6">
+        {{ form.village | as_crispy_field }}
+      </div>
+      <div class="col-md-6">
+        {{ form.Email | as_crispy_field }}
+      </div>
+    </div>
+    {{ form.address | as_crispy_field }}
+    <button type="submit" class="btn btn-success">Submit</button>
+  </form>
+  
+{% endblock %}
+{% block scripts %}
+<script src="{% static 'js/register.js' %}"></script>
+<script src="{% static 'js/gijgo.min.js' %}"></script>
+{% endblock %}

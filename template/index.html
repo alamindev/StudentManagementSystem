@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+
+{% block stylesheets %}
+  <link rel="stylesheet" href="{% static 'css/index.css' %}">
+{% endblock %} 
+
+{% block content %} 
+<div class="text-center">
+	<h2>Welcome to Attendance Management System</h2>
+	<h3>Please Roll Number sumbit and search</h3>
+		<form class="form-inline md-form mr-auto mb-4" action="/s/" method="GET" >
+				<input class="form-control mr-sm-2" type="text" name="q" placeholder="Search Roll Number" aria-label="Search">
+				<button class="btn aqua-gradient btn-rounded btn-sm my-0" type="submit">Search</button>
+		</form>	
+		 </div>
+		     
+{% endblock %}
+{% block scripts %}
+ <script src="{% static 'js/index1.js' %}"></script>
+{% endblock %}
+  
